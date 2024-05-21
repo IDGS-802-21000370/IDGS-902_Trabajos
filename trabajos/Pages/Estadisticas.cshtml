@@ -1,0 +1,19 @@
+﻿@page
+@model Tareas.Pages.EstadisticasModel
+@{
+}
+
+<h1>Estadísticas</h1>
+
+<h2>Números:</h2>
+<ul>
+    @foreach (var numero in Model.Numeros)
+    {
+        <p>-@numero</p>
+    }
+</ul>
+
+<p>Suma: @Model.Suma</p>
+<p>Promedio: @Model.Promedio</p>
+<p>Moda: @string.Join(", ", Model.Moda)</p>
+<p>Mediana: @Model.Mediana</p>

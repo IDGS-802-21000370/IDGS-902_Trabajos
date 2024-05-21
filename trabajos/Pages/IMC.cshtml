@@ -1,0 +1,28 @@
+﻿@page
+@model Tareas.Pages.IMCModel
+@{
+}
+
+<h1>IMC</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Peso">Peso en kilogramos:</label>
+        <input asp-for="Peso" class="form-control" step="0.01" required />
+
+        <label for="Altura">Altura en metros:</label>
+        <input asp-for="Altura" class="form-control" step="0.01" required />
+    </div>
+    <button type="submit">Calcular IMC</button>
+</form>
+
+@if (Model.IMC > 0)
+{
+    <p>IMC: @Model.IMC</p>
+    <p>Clasificación: @Model.Clasificacion</p>
+    <img src="@Model.ImagenRecomendacion" alt="Recomendación" />
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

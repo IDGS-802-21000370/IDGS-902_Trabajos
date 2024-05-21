@@ -1,0 +1,20 @@
+﻿
+@page
+@model Tareas.Pages.cifrado
+@{
+}
+
+<h1>Cifrado Cesar</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="msj">Mensaje:</label>
+        <input id="msj" name="msj" class="form-control" required>@Model.msj</input>
+        <button type="submit" name="action" value="encode">Codificar</button>
+        <button type="submit" name="action" value="decode">Decodificar</button>
+    </div>
+    @if (!string.IsNullOrEmpty(Model.resultado))
+    {
+        <h3>Codificación: @Model.resultado</h3>
+    }
+</form>
